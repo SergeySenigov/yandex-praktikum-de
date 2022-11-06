@@ -14,7 +14,6 @@ def print_version():
 	print(platform.system())
 	print(platform.release())
 	print(platform.platform())
-	print(platform.mac_ver())
 
 if __name__ == "__main__":
 #	fetch()
