@@ -1,3 +1,3 @@
-FROM scratch
-COPY hello /
-CMD ["/hello"]
+FROM ubuntu
+ENTRYPOINT ["top", "-b"]
+CMD ["-c"]
