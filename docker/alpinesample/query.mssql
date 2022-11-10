@@ -1,0 +1,18 @@
+select dayt, yy, mm, dd, startc, sum(value_n),
+sum(case when measuringpoint_code= '5301100572030' then value_n else null end) mc5301100572030,
+sum(case when measuringpoint_code= '5301100572018' then value_n else null end) mc5301100572018,
+sum(case when measuringpoint_code= '5301100245017' then value_n else null end) mc5301100245017,
+sum(case when measuringpoint_code= '5301100245009' then value_n else null end) mc5301100245009
+
+from xml_pepsico_data pd
+group by --file_name, 
+yy, mm, dd, dayt, startc
+--measuringpoint_code, measuringpoint_name
+order by yy, mm, dd, startc
+
+--select file_name from xml_pepsico_data pd where pd.measuringpoint_name = 'пїЅ.10'
+--delete from  xml_pepsico_data where file_name = '/Users/Shared/80020_5036065113_20210105_1317284.xml'
+-- 10 5301100572030
+-- 11 5301100572018
+-- 14 5301100245017
+-- 13 5301100245009
